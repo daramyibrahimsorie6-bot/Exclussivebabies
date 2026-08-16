@@ -1580,3 +1580,182 @@ body.dark-mode .scroll-top {
     }
 
 }
+
+/* =====================================
+   MAIN WEBSITE RETURN BUTTON
+===================================== */
+
+.main-site-btn {
+    position: relative;
+
+    min-height: 43px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 0 15px;
+
+    border-radius: 14px;
+
+    color: var(--pink-dark);
+
+    background:
+        rgba(255, 255, 255, 0.78);
+
+    border:
+        1px solid rgba(233, 47, 116, 0.13);
+
+    font-size: 13px;
+    font-weight: 800;
+
+    box-shadow:
+        0 8px 22px rgba(83, 45, 63, 0.08);
+
+    overflow: hidden;
+
+    transition:
+        transform .3s ease,
+        color .3s ease,
+        background .3s ease,
+        box-shadow .3s ease;
+}
+
+
+/* subtle shine */
+
+.main-site-btn::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -110%;
+
+    width: 65%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.7),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    transition:
+        left .6s ease;
+}
+
+
+.main-site-btn:hover::before {
+    left: 140%;
+}
+
+
+.main-site-btn:hover {
+
+    transform:
+        translateY(-2px);
+
+    color: #fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f04c89,
+            #c82361
+        );
+
+    box-shadow:
+        0 12px 28px
+        rgba(233,47,116,.24);
+}
+
+
+.main-site-btn i {
+    font-size: 12px;
+
+    transition:
+        transform .3s ease;
+}
+
+
+.main-site-btn:hover i {
+    transform:
+        translateX(-3px);
+}
+
+
+/* DARK MODE */
+
+body.dark-mode .main-site-btn {
+
+    color: #ff78aa;
+
+    background:
+        rgba(255,255,255,.06);
+
+    border-color:
+        rgba(255,255,255,.09);
+
+    box-shadow:
+        0 10px 25px
+        rgba(0,0,0,.22);
+}
+
+
+body.dark-mode .main-site-btn:hover {
+
+    color: #fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ed4c8d,
+            #b91f58
+        );
+}
+
+
+/* MOBILE */
+
+@media (max-width: 680px) {
+
+    .main-site-btn {
+
+        min-height: 39px;
+
+        padding: 0 11px;
+
+        font-size: 12px;
+    }
+
+
+    .main-site-btn span {
+
+        display: none;
+    }
+
+
+    .main-site-btn {
+
+        width: 39px;
+        height: 39px;
+
+        padding: 0;
+
+        border-radius: 12px;
+    }
+
+
+    .main-site-btn i {
+
+        font-size: 14px;
+    }
+
+}
